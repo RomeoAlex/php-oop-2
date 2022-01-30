@@ -4,7 +4,7 @@ require_once __DIR__ . '/Moto.php';
 require_once __DIR__ . '/Autocarro.php';
 require_once __DIR__ . '/User.php';
 $nuova = new Automobile('Kia', 'Nova', 30000);
-var_dump($nuova);
+// var_dump($nuova);
 $moto = new Moto('harleyDavidson', 'GT', 40000);
 
 // var_dump($moto);
@@ -18,12 +18,15 @@ $scania = new Autocarro('Scania', 'Novalese', 60000 , 3500);
 
 // utente che compra
 
-$Pino = new User('Pino', 'Caciotta', 'pinozigolo@mail.it');
+$pino = new User('Pino', 'Caciotta', 'pinozigolo@mail.it');
 // aggiungo al cart di pino la moto
 // $Pino->cart[] = $moto;
 // utilizzo la funzione addTocart
-$Pino->addToCart($scania);
-var_dump($Pino);
+$pino->addToCart($scania);
+$pino->addToCart($moto);
+// var_dump($Pino);
+$pino_cart = $pino->printCart();
+var_dump($pino_cart);
 ?>
 
 <!DOCTYPE html>
@@ -37,5 +40,20 @@ var_dump($Pino);
 <body>
     <h1>PROVA SHOP</h1>
     <h2>Banvenuto <?php echo $Pino->printUser(); ?></h2>
+    
+    <?php foreach ($pino_cart as $products) { ?>
+        
+    <div>
+        <h3>
+        <?php echo $products->marca; ?> - <?php echo $products->modello; ?>
+        </h3>
+        <div>
+            <h3><?php echo $products->ruote; ?></h3>
+            <h3>
+            <?php echo $products->prezzo; ?>
+            </h3>
+        </div>
+    </div>
+    <?php } ?>
 </body>
 </html>

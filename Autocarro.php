@@ -21,7 +21,7 @@ class Autocarro extends Veicolo{
         // IMPORTANTE!!!
         public function __construct($_marca, $_modello, $_prezzo, $_max_carico ){
             //richiamo le variabili direttamente dal padre veicolo , gli argomenti all'interno della funzione sono obbligatori!!!
-            parent::__construct($_marca, $_modello, $_prezzo);
+            parent::__construct($_marca, $_modello, $_prezzo, $_max_carico);
     
             $this->max_carico = $_max_carico;
         }
