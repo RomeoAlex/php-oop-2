@@ -18,7 +18,7 @@ $scania = new Autocarro('Scania', 'Novalese', 60000 , 3500);
 
 // utente che compra
 
-$Pino = new User('Pino', 'Zigulì', 'pinozigolo@mail.it');
+$Pino = new User('Pino', 'Caciotta', 'pinozigolo@mail.it');
 // aggiungo al cart di pino la moto
 // $Pino->cart[] = $moto;
 // utilizzo la funzione addTocart
@@ -36,6 +36,6 @@ var_dump($Pino);
 </head>
 <body>
     <h1>PROVA SHOP</h1>
-    <h2>Banvenuto <?php echo $Pino->getFullName(); ?></h2>
+    <h2>Banvenuto <?php echo $Pino->printUser(); ?></h2>
 </body>
 </html>

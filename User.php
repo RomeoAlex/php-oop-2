@@ -28,7 +28,7 @@ class User {
     }
 
     // funzione per stampa a video di nome e cognome
-    public function getFullname() {
+    public function printUser() {
         return $this->name . ' ' . $this->lastname;
     }
 }
