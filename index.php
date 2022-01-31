@@ -3,17 +3,18 @@ require_once __DIR__ . '/Automobile.php';
 require_once __DIR__ . '/Moto.php';
 require_once __DIR__ . '/Autocarro.php';
 require_once __DIR__ . '/User.php';
-$nuova = new Automobile('Kia', 'Nova', 30000);
+$nuova = new Automobile("Kia", "Nova", 30000);
 // var_dump($nuova);
 $moto = new Moto('harleyDavidson', 'GT', 40000);
 
 // var_dump($moto);
 
 $scania = new Autocarro('Scania', 'Novalese', 60000 , 3500);
-
-
 // $scania->$max_carico: 50;
-// var_dump($scania);
+
+// posso inserire le variabili di Prodotto contabile
+$scania->n_fattura = 3421;
+var_dump($scania);
 
 
 // utente che compra
@@ -22,6 +23,7 @@ $pino = new User('Pino', 'Caciotta', 'pinozigolo@mail.it');
 // aggiungo al cart di pino la moto
 // $Pino->cart[] = $moto;
 // utilizzo la funzione addTocart
+$pino->addToCart($nuova);
 $pino->addToCart($scania);
 $pino->addToCart($moto);
 // var_dump($Pino);
@@ -39,7 +41,7 @@ var_dump($pino_cart);
 </head>
 <body>
     <h1>PROVA SHOP</h1>
-    <h2>Banvenuto <?php echo $Pino->printUser(); ?></h2>
+    <?php echo '<h2>Benvenuto' . $pino->printUser() . '</h2>'; ?>
     
     <?php foreach ($pino_cart as $products) { ?>
         
@@ -48,7 +50,7 @@ var_dump($pino_cart);
         <?php echo $products->marca; ?> - <?php echo $products->modello; ?>
         </h3>
         <div>
-            <h3><?php echo $products->ruote; ?></h3>
+            <h3>Numero ruote:<?php echo $products->ruote; ?></h3>
             <h3>
             <?php echo $products->prezzo; ?>
             </h3>

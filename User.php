@@ -15,7 +15,7 @@ class User {
 
         $this->name = $_name;
 
-        $this->$lastname = $_lastname;
+        $this->lastname = $_lastname;
            
         $this->email = $_email;
 
