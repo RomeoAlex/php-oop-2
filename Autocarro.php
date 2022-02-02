@@ -30,7 +30,10 @@ class Autocarro extends Veicolo{
             if (is_int($_max_carico)) {
                 $this->max_carico = $_max_carico;
             } else {
-                throw new Exception('$_max_carico deve essere u intero');
+                //echo '$_max_carico deve essere un intero';
+                // alternativa con die
+                //die();
+                throw new Exception('$_max_carico deve essere un intero');
                 
             }
             

@@ -6,10 +6,16 @@ require_once __DIR__ . '/User.php';
 $nuova = new Automobile("Kia", "Nova", 30000);
 // var_dump($nuova);
 $moto = new Moto('harleyDavidson', 'GT', 40000);
-
 // var_dump($moto);
 
-$scania = new Autocarro('Scania', 'Novalese', 60000 , 3500);
+// personalizzazione con try e catch di un eventuale errore
+try{
+    $scania = new Autocarro('Scania', 'Novalese', 60000 , 'patate');
+} catch(Exception $e){
+    // Gestiamo l'errore
+    echo 'inserimento dati non corretto' . $e->getMessage();
+}
+
 // $scania->$max_carico: 50;
 
 // posso inserire le variabili di Prodotto contabile
